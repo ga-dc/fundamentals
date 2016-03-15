@@ -11,8 +11,8 @@ for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
   rm -r _book
-  gitbook install
-  gitbook build
+  gitbook install > /dev/null
+  gitbook build > /dev/null
   cp -r _book/* dist/$tag/
   git reset --hard $latest
   cd dist
