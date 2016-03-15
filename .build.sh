@@ -10,9 +10,9 @@ mkdir dist
 for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
+  rm -r _book
   gitbook install
   gitbook build
-  rm -r _book
   cp -r _book/* dist/$tag/
   git reset --hard $latest
   cd dist
