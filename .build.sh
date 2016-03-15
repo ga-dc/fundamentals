@@ -3,7 +3,9 @@
 set -o errexit -o nounset
 
 latest=`git rev-parse HEAD`
-rm -r dist
+if [-d dist] then
+  rm -r dist
+fi
 mkdir dist
 for tag in `git tag`; do
   mkdir dist/$tag
