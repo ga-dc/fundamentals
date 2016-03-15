@@ -6,7 +6,7 @@ rm -r dist
 mkdir dist
 for tag in `git tag`; do
   mkdir dist/$tag
-  git checkout $tag
+  git reset --hard $tag
   gitbook install
   gitbook build
   cp -r _book/* dist/$tag/
