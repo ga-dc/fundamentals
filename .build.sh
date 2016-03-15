@@ -3,6 +3,7 @@
 set -o errexit -o nounset
 
 gitbook install
+rm -r dist
 mkdir dist
 for tag in `git tag`; do
   mkdir dist/$tag
