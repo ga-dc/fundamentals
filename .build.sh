@@ -3,7 +3,7 @@
 set -o errexit -o nounset
 
 latest=`git rev-parse HEAD`
-if [-d dist] then
+if [-d dist]; then
   rm -r dist
 fi
 mkdir dist
