@@ -19,5 +19,5 @@ for tag in `git tag`; do
   git init
   git add .
   git commit -m "built from $latest"
-  git push -f origin gh-pages
+  git push -f origin master:gh-pages
 done;
