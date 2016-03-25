@@ -12,7 +12,7 @@ mkdir dist
 for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
-  rm -r _book
+  touch _book && rm -r _book
   gitbook install > /dev/null
   gitbook build > /dev/null
   cp -r _book/* dist/$tag/
