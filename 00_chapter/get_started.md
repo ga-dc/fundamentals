@@ -2,6 +2,8 @@
 
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xSp5QwKRwqM" frameborder="0" allowfullscreen></iframe>
+
 ## Join the WDI Community on Slack!
 
 We design our immersive courses to help you embrace the challenge of lifelong learning. This means that when you get stuck, the instructors you work with will often help you to drive your own process of discovery, rather than just give you the right answer. You'll also learn to rely on your classmates for support and structure.
