@@ -21,6 +21,8 @@ for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
   fi
 done;
 
+git reset --hard $latest
+
 for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
@@ -31,10 +33,10 @@ for tag in `git tag`; do
   cp -r _book/* dist/$tag/
 done;
 
-echo "Building $tag"
+git reset --hard $latest
+
+echo "Building $latest"
 touch _book && rm -r _book
 gitbook install > /dev/null
 gitbook build > /dev/null
 cp -r _book/* dist/
-
-git reset --hard $latest
