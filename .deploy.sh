@@ -20,4 +20,4 @@ touch .
 
 git add -A .
 git commit -m "Rebuild fundamentals at ${rev}"
-git push -f upstream HEAD:gh-pages
+git push -f upstream HEAD:gh-pages > /dev/null
