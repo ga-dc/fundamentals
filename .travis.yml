@@ -4,7 +4,7 @@ node_js:
 script:
 - bash .build.sh
 after_success:
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash .deploy.sh
+- bash .deploy.sh
 env:
   global:
    secure: "XpsGlM8EyYf5kIXxpkQ3BmPEmBQ6RkgKfrOVEPpmvoaSuCMUls1dQZ01qqs5z9/f9xZpXrwYY+DHkKNQAyskMrF7L+cxzngF/yng9Ck3HFo7hA2kisGJzRaTFQez5CBNXTXnaSJonzAVrFGPCcVCcxFIh/XgdatWsnJK6/UWBeF+werDiGK7F3onIuNiFBjFN4ldb8xDUafwzKF7q4lbNFSGyAVfrYzEyqJhNPQzRtJvWxxqNrdl7e3iJvB0HTftH3gCJKtLCWYtv/5ctMC5Ma7EnyJFYmLJvtu2uUJoVoIj9SlgR7lyB5Bl89BszC8b6xjgCgog3ytuwlN3IIvaeHqaUvfk1jZIb2/iZaA/AixMZjX7FlujdtuMQuMquEu4r8rCk+ALjXbkKAWILY2CsbNC3scj7sh8G8qeMEgRXG2hFQlxUheoH6Ax3NQ4nAtH9Q3OlvboKujWmIgXmUmCWi8J6+V+FjqmCMvc8brTqDAcoVBkdZILlaiCpMuedq4mkJh+MywX22YBUd8aCqz7ndA1UEBP8KKyzfU50TtEh0S2+ywn5W/AP8estkixPEqSj9NQ43EIm5JA7jzWMgJC4K1PCjv8wiXA+XRzOB/2Be+irlyRRCAWbLFWrnESmdfsl3rLmzdtCOveLwFpSup7qrQ23juTHpuLomC/CO018hs="
