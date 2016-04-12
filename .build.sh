@@ -22,6 +22,4 @@ done;
 
 cp -r _book/* dist/
 
-echo "<meta http-equiv='refresh' content='0;URL=./$last_tag'>" >> dist/index.html
-
 git reset --hard $latest
