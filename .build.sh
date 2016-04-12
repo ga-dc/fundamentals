@@ -11,7 +11,7 @@ mkdir dist
 
 for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
   mkdir dist/$tag
-  git reset --hard $tag
+  git reset --hard origin/$tag
   echo "Building $tag"
   touch _book && rm -r _book
   gitbook install > /dev/null
