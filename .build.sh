@@ -20,16 +20,13 @@ done;
 
 for tag in $branches; do
   if [ "$tag" != "gh-pages" ]; then
-    mkdir dist/$tag
+    mkdir ../dist/$tag
     echo "Building $tag"
     git reset --hard origin/$tag
     touch _book && rm -r _book
     gitbook install && gitbook build && cp -r _book/* ../dist/$tag/
   fi
 done;
-
-ls dist/
-
 
 git reset --hard $latest
 
