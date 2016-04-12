@@ -5,16 +5,17 @@ latest=`git rev-parse HEAD`
 if [ -d dist ]; then
   rm -r dist
 fi
-mkdir dist
+mkdir ../dist
 tags=`git tag`
 branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
 
 for tag in $tags; do
-  mkdir dist/$tag
+  mkdir ../dist/$tag
   git reset --hard $tag
   echo "Building tag: $tag"
   touch _book && rm -r _book
-  gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* dist/$tag/
+  gitbook install > /dev/null && gitbook build > /dev/null
+  cp -r _book/* ../dist/$tag/
 done;
 
 for tag in $branches; do
@@ -23,7 +24,7 @@ for tag in $branches; do
     echo "Building $tag"
     git reset --hard origin/$tag
     touch _book && rm -r _book
-    gitbook install && gitbook build && cp -r _book/* dist/$tag/
+    gitbook install && gitbook build && cp -r _book/* ../dist/$tag/
   fi
 done;
 
@@ -36,4 +37,4 @@ echo "Building $latest"
 touch _book && rm -r _book
 gitbook install > /dev/null
 gitbook build > /dev/null
-cp -r _book/* dist/
+cp -r _book/* ../dist/
