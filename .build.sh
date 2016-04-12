@@ -21,7 +21,6 @@ for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
   fi
 done;
 
-"
 for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
@@ -37,6 +36,5 @@ touch _book && rm -r _book
 gitbook install > /dev/null
 gitbook build > /dev/null
 cp -r _book/* dist/
-"
 
 git reset --hard $latest
