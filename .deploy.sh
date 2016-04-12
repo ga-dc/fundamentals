@@ -6,7 +6,7 @@ rev=$(git rev-parse --short HEAD)
 
 GH_TOKEN=`cat ~/.github`
 
-cd dist
+cd ../dist
 
 git init
 git config user.name "JD Maresco"

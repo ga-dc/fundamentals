@@ -30,7 +30,10 @@ done;
 
 git reset --hard $latest
 
-echo "Building $latest"
+echo "Building master"
+
+git reset --hard master
+
 touch _book && rm -r _book
 gitbook install > /dev/null
 gitbook build > /dev/null
