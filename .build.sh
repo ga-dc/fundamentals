@@ -1,6 +1,9 @@
 #!/bin/bash
 
 git fetch --unshallow
+branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
+echo "BRANCHES"
+echo $branches
 latest=`git rev-parse HEAD`
 npm install -g gitbook gitbook-cli
 
@@ -9,7 +12,6 @@ if [ -d dist ]; then
 fi
 mkdir ../dist
 tags=`git tag`
-branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
 
 for tag in $tags; do
   mkdir ../dist/$tag
