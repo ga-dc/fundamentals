@@ -23,9 +23,7 @@ for tag in $branches; do
     echo "Building $tag"
     git reset --hard origin/$tag
     touch _book && rm -r _book
-    gitbook install
-    gitbook build
-    cp -r _book/* dist/$tag/
+    gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* dist/$tag/
   fi
 done;
 
