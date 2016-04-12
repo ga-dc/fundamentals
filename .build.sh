@@ -11,6 +11,7 @@ tags=`git tag`
 branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
 
 for tag in $tags; do
+  npm install
   mkdir ../dist/$tag
   git reset --hard $tag
   echo "Building tag: $tag"
