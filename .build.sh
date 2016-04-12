@@ -2,6 +2,7 @@
 
 git fetch --unshallow
 latest=`git rev-parse HEAD`
+npm install -g gitbook gitbook-cli
 
 if [ -d dist ]; then
   rm -r dist
