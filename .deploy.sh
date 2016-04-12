@@ -4,7 +4,7 @@ set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
 
-cd _book
+cd dist
 
 git init
 git config user.name "JD Maresco"
