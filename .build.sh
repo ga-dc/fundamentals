@@ -27,9 +27,7 @@ for tag in $tags; do
   git reset --hard $tag
   echo "Building $tag"
   touch _book && rm -r _book
-  gitbook install > /dev/null
-  gitbook build > /dev/null
-  cp -r _book/* dist/$tag/
+  gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* dist/$tag/
 done;
 
 git reset --hard $latest
