@@ -42,7 +42,7 @@
     
 
         
-    <div class="book" data-level="6.3.1" data-basepath=".." data-revision="Tue Apr 12 2016 10:33:22 GMT-0400 (EDT)">
+    <div class="book" data-level="6.3.1" data-basepath=".." data-revision="Tue Apr 12 2016 14:54:32 GMT+0000 (UTC)">
     
 
 <div class="book-summary">
@@ -197,10 +197,10 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="01_chapter/10_exercise.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_chapter/09_exercise.html">
             
                 
-                    <a href="../01_chapter/10_exercise.html">
+                    <a href="../01_chapter/09_exercise.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.3.1.</b>
@@ -217,13 +217,49 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="01_chapter/09_quiz.html">
+        <li class="chapter " data-level="1.4" data-path="01_chapter/10_lesson.html">
             
                 
-                    <a href="../01_chapter/09_quiz.html">
+                    <a href="../01_chapter/10_lesson.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.4.</b>
+                        
+                        Thinking Programmatically
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01_chapter/11_exercise.html">
+            
+                
+                    <a href="../01_chapter/11_exercise.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        Exercise
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="01_chapter/13_quiz.html">
+            
+                
+                    <a href="../01_chapter/13_quiz.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
                         
                         Quiz
                     </a>
@@ -232,13 +268,13 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="01_chapter/12_cheatsheet.html">
+        <li class="chapter " data-level="1.6" data-path="01_chapter/14_cheatsheet.html">
             
                 
-                    <a href="../01_chapter/12_cheatsheet.html">
+                    <a href="../01_chapter/14_cheatsheet.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>1.5.</b>
+                            <b>1.6.</b>
                         
                         Cheat Sheet
                     </a>
@@ -247,13 +283,13 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="01_chapter/11_assessment.html">
+        <li class="chapter " data-level="1.7" data-path="01_chapter/15_assessment.html">
             
                 
-                    <a href="../01_chapter/11_assessment.html">
+                    <a href="../01_chapter/15_assessment.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>1.6.</b>
+                            <b>1.7.</b>
                         
                         Unit 1 Homework
                     </a>
@@ -1029,6 +1065,21 @@
             
         </li>
     
+        <li class="chapter " data-level="7" data-path="exercise-solutions.html">
+            
+                
+                    <a href="../exercise-solutions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Exercise Solutions
+                    </a>
+                
+            
+            
+        </li>
+    
 
 
         
@@ -1123,24 +1174,59 @@
                         <p><strong>WDI Fundamentals Unit 6</strong></p>
 <hr>
 <h2 id="-your-turn-assets-exercise-png-your-turn"><img src="../assets/exercise.png" alt="Your Turn"> Your Turn</h2>
-<p>In this exercise, we&apos;ll return to our checkers game one last time. This time, however, we won&apos;t be writing a function; instead, your mission, should you choose to accept it, is to create a nested array called <code>pieces</code> to store the locations of every piece on the board.</p>
-<p><code>pieces</code> should be an associative array, with two keys : &apos;red&apos; and &apos;black&apos;. Each of these keys should correspond to a normal array listing out all of the different pieces for that color. Each piece should be represented as a two-element array in the pattern of <code>[row,col]</code>; for example, the list of red pieces would include <code>[0,0]</code>, <code>[0,2]</code>, <code>[0,4]</code>, etc.</p>
-<p>Here&apos;s that diagram again, in case you forgot how to set up the board.</p>
-<p><img src="../assets/Graphics/checkers.jpg" alt="Picture of Checkerboard"></p>
-<p>To test your work, run each of the following two operations in the repli.it console</p>
-<pre><code class="lang-javascript">  pieces[<span class="hljs-string">&apos;red&apos;</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(piece)</span></span>{
-      <span class="hljs-keyword">var</span> row = piece[<span class="hljs-number">0</span>];
-      <span class="hljs-keyword">var</span> col = piece[<span class="hljs-number">1</span>];
-      <span class="hljs-keyword">return</span> checkerboard[row][col] === <span class="hljs-string">&apos;R&apos;</span>;
-    });
-
-  pieces[<span class="hljs-string">&apos;black&apos;</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(piece)</span></span>{
-      <span class="hljs-keyword">var</span> row = piece[<span class="hljs-number">0</span>];
-      <span class="hljs-keyword">var</span> col = piece[<span class="hljs-number">1</span>];
-      <span class="hljs-keyword">return</span> checkerboard[row][col] === <span class="hljs-string">&apos;B&apos;</span>;
-    });
-</code></pre>
-<p>Each of these operations should return an array full of boolean values. If both arrays&apos; values are all <code>true</code>, then congratulations - you&apos;re done!</p>
+<p>Now that we have a way to store keys and values, we can add some complexity to our contact book. Are you ready?</p>
+<p>Again, our goal is to create a contact book that allows us to store contact info (we&apos;ll want to store first name, last name, phone, and email), add a new contact, list contacts, and find contacts by first or last name.</p>
+<p>Before taking a look at the instructions below, take a few minutes to think through the problem and try your hand at breaking things down into steps by writing out pseudo code. Although the instructions will guide you through building the program, it&apos;s helpful to get practice thinking about how you would approach different problems. Programmatic thinking gets easier with practice!</p>
+<p>Instructions</p>
+<ol>
+<li>Let&apos;s get a fresh start! Open a new session in <a href="https://repl.it/" target="_blank">repl.it</a>.</li>
+<li>Write the code to perform the actions listed below, using repl.it&apos;s editor window.</li>
+<li>Click &apos;play&apos; to run the code.</li>
+<li>Call each function from the console window. Try using different parameters to make sure they&apos;re working properly.</li>
+</ol>
+<h3 id="let-s-get-started">Let&apos;s get started!</h3>
+<ul>
+<li>Create an array called <code>contacts</code>. The contacts array should contain three associative arrays, one for each contact stored in our book. Here&apos;s the contact information for each person:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&apos;firstName&apos;</th>
+<th>&apos;lastName&apos;</th>
+<th>&apos;phone&apos;</th>
+<th>&apos;email&apos;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&apos;John&apos;</td>
+<td>&apos;Doe&apos;</td>
+<td>&apos;(512) 355-0453&apos;</td>
+<td>&apos;johndoe@email.com&apos;</td>
+</tr>
+<tr>
+<td>&apos;Jane&apos;</td>
+<td>&apos;Doe&apos;</td>
+<td>&apos;(312) 641-2203&apos;</td>
+<td>&apos;janedoe@email.com&apos;</td>
+</tr>
+<tr>
+<td>&apos;Suzie&apos;</td>
+<td>&apos;Smith&apos;</td>
+<td>&apos;(415) 604-4219&apos;</td>
+<td>&apos;suziesmith@email.com&apos;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Next let&apos;s create a function <code>addContact</code> that accepts one parameter, <code>newContact</code>. This function should add the newContact to the end of the contacts array and return the contacts array. When you&apos;re done, try calling the function and passing in an associative array as a parameter to make sure it&apos;s working.</li>
+<li>Now let&apos;s create a <code>listContacts</code> function to list our contacts. This function should loop through the contacts array and logs the first and last name for each contact to the console, i.e. &apos;John Doe&apos;.</li>
+<li>Now let&apos;s create a function that will search through our contacts and return the contact info for any person that has a matching first or last name. Create a <code>search</code> function, which will take one parameter, <code>name</code>. In the <code>search</code> function, use a loop to iterate through the contacts array and return the current contact if their first <em>or</em> last name matches the <code>name</code> parameter.</li>
+</ul>
+<p>Woohoo! You&apos;ve done it! We now have a working contact book that allows us to store contacts, add contacts, list contacts, and find a contact by first or last name. Congratulations!</p>
+<blockquote>
+<p><em>Stuck? Check out the <a href="https://github.com/generalassembly-studio/fundamentals/blob/master/exercise-solutions.md" target="_blank">solutions</a> to see what you can do.</em></p>
+</blockquote>
 <hr>
 <p>Feeling confident? <a href="09_quiz.html">Test your understanding of iteration with this next quiz.</a></p>
 

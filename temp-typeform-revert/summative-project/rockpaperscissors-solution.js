@@ -3,7 +3,8 @@
 ////////////////////////////////////////////////
 function getInput() {
    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
-   return prompt();
+   var answer = prompt();
+   return answer;
 }
 function randomPlay() {
    var randomNumber = Math.random();
