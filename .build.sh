@@ -1,9 +1,7 @@
 #!/bin/bash
 
-git fetch --all
-echo `git branch -a`
+git fetch origin '+refs/heads/*:refs/heads/*'
 branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
-echo $branches
 latest=`git rev-parse HEAD`
 npm install -g gitbook gitbook-cli
 
@@ -27,8 +25,7 @@ for tag in $branches; do
   if [ "$tag" != "gh-pages" ]; then
     mkdir ../dist/$tag
     echo "Building $tag"
-    git checkout master
-    git checkout $tag -- .
+    git reset --hard $tag -- .
     touch _book && rm -r _book
     gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* ../dist/$tag/
   fi
