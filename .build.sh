@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git fetch --unshallow
 latest=`git rev-parse HEAD`
 
 if [ -d dist ]; then
