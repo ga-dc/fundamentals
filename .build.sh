@@ -9,6 +9,16 @@ if [ -d dist ]; then
 fi
 mkdir dist
 
+for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
+  mkdir dist/$tag
+  git reset --hard $tag
+  echo "Building $tag"
+  touch _book && rm -r _book
+  gitbook install > /dev/null
+  gitbook build > /dev/null
+  cp -r _book/* dist/$tag/
+done;
+
 for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
@@ -17,9 +27,11 @@ for tag in `git tag`; do
   gitbook install > /dev/null
   gitbook build > /dev/null
   cp -r _book/* dist/$tag/
-  last_tag=$tag
 done;
 
-cp -r _book/* dist/
-
 git reset --hard $latest
+echo "Building $tag"
+touch _book && rm -r _book
+gitbook install > /dev/null
+gitbook build > /dev/null
+cp -r _book/* dist/
