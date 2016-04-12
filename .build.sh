@@ -13,8 +13,8 @@ for tag in `git tag`; do
   mkdir dist/$tag
   git reset --hard $tag
   touch _book && rm -r _book
-  gitbook install > /dev/null
-  gitbook build > /dev/null
+  gitbook install 
+  gitbook build  
   cp -r _book/* dist/$tag/
   last_tag=$tag
 done;
