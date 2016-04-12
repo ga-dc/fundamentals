@@ -6,6 +6,7 @@ if [ -d dist ]; then
   rm -r dist
 fi
 mkdir dist
+tags=`git tag`
 
 for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
   if [ "$tag" != "gh-pages" ]; then
@@ -19,11 +20,9 @@ for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
   fi
 done;
 
-git reset --hard $latest
+ls dist/
 
-echo `git tag`
-
-for tag in `git tag`; do
+for tag in $tags; do
   mkdir dist/$tag
   git reset --hard $tag
   echo "Building $tag"
