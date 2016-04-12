@@ -13,7 +13,7 @@ branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
 
 for tag in $tags; do
   mkdir ../dist/$tag
-  git reset --hard $tag
+  git reset --hard $tag --
   echo "Building tag: $tag"
   touch _book && rm -r _book
   gitbook install > /dev/null && gitbook build > /dev/null
@@ -24,13 +24,13 @@ for tag in $branches; do
   if [ "$tag" != "gh-pages" ]; then
     mkdir ../dist/$tag
     echo "Building $tag"
-    git reset --hard $tag
+    git reset --hard $tag --
     touch _book && rm -r _book
     gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* ../dist/$tag/
   fi
 done;
 
-git reset --hard $latest
+git reset --hard $latest --
 
 echo "Building master"
 
