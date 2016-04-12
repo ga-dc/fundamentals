@@ -15,13 +15,15 @@ for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
     echo "Building $tag"
     git reset --hard origin/$tag
     touch _book && rm -r _book
-    gitbook install > /dev/null
-    gitbook build > /dev/null
+    gitbook install
+    gitbook build
     cp -r _book/* dist/$tag/
   fi
 done;
 
 git reset --hard $latest
+
+echo `git tag`
 
 for tag in `git tag`; do
   mkdir dist/$tag
