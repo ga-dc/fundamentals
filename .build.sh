@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git fetch --all origin
+git fetch --all
 echo `git branch -a`
 branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
 echo $branches
