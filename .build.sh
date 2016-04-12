@@ -23,10 +23,11 @@ for tag in $tags; do
 done;
 
 for tag in $branches; do
+  git fetch origin $tag
   if [ "$tag" != "gh-pages" ]; then
     mkdir ../dist/$tag
     echo "Building $tag"
-    git reset --hard remotes/origin/$tag --
+    git reset --hard origin/$tag --
     touch _book && rm -r _book
     gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* ../dist/$tag/
   fi
