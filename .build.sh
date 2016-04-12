@@ -1,9 +1,9 @@
 #!/bin/bash
 
-git fetch --all --unshallow
-echo "GIT BRANCH"
-echo `git remote -v`
+git fetch --all origin
+echo `git branch -a`
 branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
+echo $branches
 latest=`git rev-parse HEAD`
 npm install -g gitbook gitbook-cli
 
