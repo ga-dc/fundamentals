@@ -7,9 +7,17 @@ if [ -d dist ]; then
 fi
 mkdir dist
 tags=`git tag`
+branches=`git ls-remote --heads origin  | sed 's?.*refs/heads/??'`
 
-"
-for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
+for tag in $tags; do
+  mkdir dist/$tag
+  git reset --hard $tag
+  echo "Building tag: $tag"
+  touch _book && rm -r _book
+  gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* dist/$tag/
+done;
+
+for tag in $branches; do
   if [ "$tag" != "gh-pages" ]; then
     mkdir dist/$tag
     echo "Building $tag"
@@ -20,17 +28,9 @@ for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
     cp -r _book/* dist/$tag/
   fi
 done;
-"
 
 ls dist/
 
-for tag in $tags; do
-  mkdir dist/$tag
-  git reset --hard $tag
-  echo "Building $tag"
-  touch _book && rm -r _book
-  gitbook install > /dev/null && gitbook build > /dev/null && cp -r _book/* dist/$tag/
-done;
 
 git reset --hard $latest
 
