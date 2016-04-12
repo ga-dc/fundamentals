@@ -8,6 +8,7 @@ fi
 mkdir dist
 tags=`git tag`
 
+"
 for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
   if [ "$tag" != "gh-pages" ]; then
     mkdir dist/$tag
@@ -19,6 +20,7 @@ for tag in `git ls-remote --heads origin  | sed 's?.*refs/heads/??'`; do
     cp -r _book/* dist/$tag/
   fi
 done;
+"
 
 ls dist/
 
